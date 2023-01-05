@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Land</title>
+    <link rel="icon" href="/desing/icon.png" type="image/x-icon">
+    <audio id="audio" src="./music/03.mp3" autoplay loop></audio>
+    <audio id="engaudio" src=""></audio>
+    <script>
+        function playeng(id) {
+            var engaudio = document.getElementById("engaudio");
+            var ceng = document.getElementById(id).value
+            console.log(ceng)
+            for (let i = 1; i <= 10; i++) {
+                if (ceng == i) {
+                    engaudio.src = "./card/eng/3/" + i + ".mp3"
+                }
+            }
+            engaudio.play();
+        }
+        var audio = document.getElementById("audio");
+        audio.volume = 0.02;
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function stop() {
+            var audio = document.getElementById("audio");
+            audio.pause();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content" style="text-align: right; padding-top: 10px; padding-right: 50px;">
+        <input type="image" src="./desing/speak.png" style="width: 2.5%;" onclick="play()">
+        <input type="image" src="./desing/stop.png" style="width: 2.5%; padding-left: 20px;" onclick="stop()">
+        <div>
+            <img src="/card/mwordeng.png">
+        </div>
+        <div style="padding-top: 50px;">
+            <table>
+                <tr>
+                    <td>
+                        <input id="1" value="1" type="image" src="/card/eng/3/q.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="2" value="2" type="image" src="/card/eng/3/r.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="3" value="3" type="image" src="/card/eng/3/s.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="4" value="4" type="image" src="/card/eng/3/t.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="5" value="5" type="image" src="/card/eng/3/u.jpg" onclick="playeng(this.id)">
+                    </td>
+                </tr>
+            </table>
+            <table style="padding-top: 80px;">
+                <tr> 
+                    <td>
+                        <input id="6" value="6" type="image" src="/card/eng/3/v.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="7" value="7" type="image" src="/card/eng/3/w.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="8" value="8" type="image" src="/card/eng/3/x.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="9" value="9" type="image" src="/card/eng/3/y.jpg" onclick="playeng(this.id)">
+                    </td>
+                    <td>
+                        <input id="10" value="10" type="image" src="/card/eng/3/z.jpg" onclick="playeng(this.id)">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="padding-top: 350px;">
+            <a href="wordeng2.html"><input class="bf" type="image" src="./desing/return2.png" style="width: 4.5%; padding-right: 20px;"></a>
+            <a href="ccard.html"><input class="bf" type="image" src="card/menu.png" style="width: 4.5%;"></a>
+        </div>
+</body>
+<style>
+    body {
+        background-image: url('./card/3.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .bf {
+        width: auto;
+    }
+
+    input {
+        width: 500px;
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+
+</html>

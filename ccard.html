@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Land</title>
+    <link rel="icon" href="/desing/icon.png" type="image/x-icon">
+    <audio id="audio" src="./music/01.mp3" autoplay loop></audio>
+    <script>
+        var audio = document.getElementById("audio");
+        audio.volume = 0.02;
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function stop() {
+            var audio = document.getElementById("audio");
+            audio.pause();
+        }
+    </script>
+</head>
+
+
+<body>
+    <audio autoplay src="./card/main.mp3"></audio>
+    <div class="content" style="text-align: right; padding-top: 10px; padding-right: 50px;">
+        <a href="select.html"><input type="image" src="./desing/return.png" style="width: 2.5%; "></a>
+        <a href="index.html"><input type="image" src="./desing/home.png" style="width: 2.5%; padding-left: 20px;"></a>
+        <input type="image" src="./desing/speak.png" style="width: 2.5%; padding-left: 20px;" onclick="play()">
+        <input type="image" src="./desing/stop.png" style="width: 2.5%; padding-left: 20px;" onclick="stop()">
+    </div>
+    <div>
+        <img src="/card/ccard.png">
+    </div>
+    <div style="padding-top: 70px;">
+        <a href="number.html"><input type="image" src="./card/number.png" style="padding-right: 50px;"></a>
+        <a href="wordeng.html"><input type="image" src="./card/wordeng.png"></a>
+        <a href="wordth.html"><input type="image" src="./card/wordth.png" style="padding-left: 50px;"></a>
+        <a href="vowel.html"><input type="image" src="./card/vowel.png" style="padding-left: 50px;"></a>
+    </div>
+    <div>
+        <a href="select.html"><input type="image" src="./desing/return2.png"
+        style="width: 4.5%;"></a>
+    </div>
+</body>
+<style>
+    body {
+        background-image: url('./card/card2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+
+</html>

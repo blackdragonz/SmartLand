@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Land</title>
+    <link rel="icon" href="/desing/icon.png" type="image/x-icon">
+</head>
+
+<audio id="audio" src="./desing/select.mp3" autoplay loop></audio>
+<script>
+    var audio = document.getElementById("audio");
+    audio.volume = 0.02;
+    function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+    }
+    function stop() {
+        var audio = document.getElementById("audio");
+        audio.pause();
+    }
+</script>
+
+<body>
+    <audio autoplay src="./desing/smain.mp3"></audio>
+    <video autoplay muted loop id="myVideo">
+        <source src="/desing/bgst.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <div class="content" style="text-align: right; padding-top: 10px; padding-right: 50px;">
+            <a href="index.html"><input type="image" src="./desing/return.png"
+                    style="width: 2.5%; padding-right: 20px;"></a>
+            <input type="image" src="./desing/speak.png" style="width: 2.5%;" onclick="play()">
+            <input type="image" src="./desing/stop.png" style="width: 2.5%; padding-left: 20px;" onclick="stop()">
+        </div>
+        <div style="padding-top: 400px; padding-left: 2300px;">
+            <a href="cword.html"><input type="image" src="./desing/3.png"></a>
+        </div>
+        <div style="padding-left: 2800px;">
+            <a href="cmath.html"><input type="image" src="./desing/4.png"></a>
+        </div>
+        <div style="padding-top: 300px; padding-left: 350px;">
+            <a href="ccard.html"><input type="image" src="./desing/1.png"></a>
+        </div>
+        <div style="padding-left: 1100px;">
+            <a href="cpicture.html"><input type="image" src="./desing/2.png"></a>
+        </div>
+        <div style="padding-top: 260px; text-align: center;">
+            <a href="index.html"><input type="image" src="./desing/return2.png"
+                style="width: 4.5%;"></a>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        font-size: 17px;
+    }
+
+    #myVideo {
+        position: fixed;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .content {
+        width: 100%;
+        position: fixed;
+    }
+</style>
+
+</html>

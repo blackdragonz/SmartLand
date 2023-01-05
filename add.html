@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Land</title>
+    <link rel="icon" href="/desing/icon.png" type="image/x-icon">
+    <audio id="audio" src="./music/11.mp3" loop></audio>
+    <script>
+        count = 0;
+        function start() {
+            num1 = document.getElementById("num1").value = Math.floor(Math.random() * 10) + 1;
+            num2 = document.getElementById("num2").value = Math.floor(Math.random() * 10) + 1;
+            console.log(count)
+            document.getElementById("sum").value = ""
+            document.getElementById("check").src = "";
+            document.getElementById("sum").focus()
+        }
+
+        function checkSum() {
+            var audio1 = document.getElementById("scorrect");
+            var audio2 = document.getElementById("smissing");
+            var audio3 = document.getElementById("snoans");
+            cal = num1 + num2
+            sum = document.getElementById("sum").value
+            if (cal == sum) {
+                document.getElementById("check").src = "./math/correct.png";
+                audio1.play();
+                return count++;
+                console.log(count)
+            } else if (sum == "") {
+                document.getElementById("check").src = "./math/numb.png";
+                document.getElementById("sum").focus()
+                audio3.play();
+            } else {
+                document.getElementById("check").src = "./math/missing.png";
+                document.getElementById("sum").focus()
+                document.getElementById("sum").value = ""
+                audio2.play();
+            }
+        }
+
+        var audio = document.getElementById("audio");
+        audio.volume = 0.02;
+        setTimeout(function () {
+            document.getElementById("audio").play();
+        }, 1700)
+
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function stop() {
+            var audio = document.getElementById("audio");
+            audio.pause();
+        }
+    </script>
+</head>
+
+<body onload="start()">
+    <video autoplay muted loop id="myVideo">
+        <source src="/math/1.mp4" type="video/mp4">
+    </video>
+    <audio autoplay src="./math//cal.mp3"></audio>
+    <audio id="scorrect" src="./math/correct.mp3"></audio>
+    <audio id="smissing" src="./math/missing.mp3"></audio>
+    <audio id="snoans" src="./math/noans.mp3"></audio>
+    <div class="content">
+    <div style="text-align: right; padding-top: 10px; padding-right: 20px;">
+        <a href="index.html"><input type="image" src="./desing/home.png" style="width: 2.5%; "></a>
+        <input type="image" src="./desing/speak.png" style="width: 2.5%; padding-left: 20px;" onclick="play()">
+        <input type="image" src="./desing/stop.png" style="width: 2.5%; padding-left: 20px;" onclick="stop()">
+        <audio id="audio" src="./design/sound.mp3"></audio>
+    </div>
+    <table class="Up">
+        <tr>
+            <td>
+                <img src="./math/descript5.png">
+            </td>
+        </tr>
+    </table>
+    <table class="cal">
+        <tr>
+            <td>
+                <input class="Q" type="number" id="num1" value="num1" disabled></label>
+            </td>
+            <td>
+                <label>+</label>
+            </td>
+            <td>
+                <input class="Q" type="number" id="num2" value="num2" disabled></label>
+            </td>
+            <td>
+                <label>=</label>
+            </td>
+            <td>
+                <input type="number" id="sum" class="inputNum" autofocus>
+            </td>
+            <td>
+                <div>
+                    <img id="check" src="">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="BTdiv">
+        <a href="cmath.html"><input type="image" src="./math/back.png"></a>
+        <input class="inputBT" type="image" id="ans" onclick="checkSum()" src="./math/ans.png" value="">
+        <input class="inputBT" type="image" src="./math/refresh.png" onclick="start()">
+    </div>
+</div>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Itim&family=Kanit:ital,wght@1,100&family=Noto+Sans+Thai:wght@100&family=Rubik+Spray+Paint&family=Sriracha&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,100&family=Noto+Sans+Thai:wght@100&family=Rubik+Spray+Paint&display=swap');
+
+    .Up {
+        width: 100%;
+    }
+
+    .cal {
+        width: 60%;
+        margin: auto;
+    }
+
+    tr {
+        text-align: center;
+    }
+
+    .calbg {
+        background-color: rgb(240, 237, 237);
+    }
+
+    td {
+        padding-left: 60px;
+        padding-right: 50px;
+    }
+
+    body {
+        background-image: url('./math/bg3.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    label{
+        color: black;
+        text-shadow: 10px 10px white;
+        font-size: 200px;
+        font-family: 'Kanit', sans-serif;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Rubik Spray Paint', cursive;
+    }
+    .inputNum {
+        width: 600px;
+        color: black;
+        text-shadow: 10px 10px white;
+        margin: auto;
+        box-sizing: border-box;
+        text-align: center;
+        border: none;
+        background-color: transparent;
+        border-bottom: 8px solid black;
+        font-size: 200px;
+        font-family: 'Kanit', sans-serif;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Rubik Spray Paint', cursive;
+    }
+    .Q{
+        width: 450px;
+        color: black;
+        text-shadow: 10px 10px white;
+        margin: auto;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        font-size: 200px;
+        font-family: 'Kanit', sans-serif;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Rubik Spray Paint', cursive;
+    }
+    .BTdiv{
+        padding-top: 50px;
+        text-align: center;
+    }
+    .inputBT{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .checkdiv{
+        width: 600px;
+        font-weight: bold;
+        color: black;
+        text-shadow: 10px 10px white;
+        margin: auto;
+        font-size: 120px;
+        font-family: 'Itim', cursive;
+        font-family: 'Kanit', sans-serif;
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-family: 'Rubik Spray Paint', cursive;
+        font-family: 'Sriracha', cursive;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial;
+        font-size: 17px;
+    }
+
+    #myVideo {
+        position: fixed;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .content {
+        width: 100%;
+        position: fixed;
+    }
+</style>
+
+</html>

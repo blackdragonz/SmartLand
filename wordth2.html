@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Land</title>
+    <link rel="icon" href="/desing/icon.png" type="image/x-icon">
+    <audio id="audio" src="./music/04.mp3" autoplay loop></audio>
+    <audio id="thaudio" src=""></audio>
+    <script>
+        function playth(id) {
+            var thaudio = document.getElementById("thaudio");
+            var cth = document.getElementById(id).value
+            console.log(cth)
+            for (let i = 1; i <= 11; i++) {
+                if (cth == i) {
+                    thaudio.src = "./card/th/2/" + i + ".mp3"
+                }
+            }
+            thaudio.play();
+        }
+        var audio = document.getElementById("audio");
+        audio.volume = 0.02;
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function stop() {
+            var audio = document.getElementById("audio");
+            audio.pause();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content" style="text-align: right; padding-top: 10px; padding-right: 50px;">
+        <input type="image" src="./desing/speak.png" style="width: 2.5%;" onclick="play()">
+        <input type="image" src="./desing/stop.png" style="width: 2.5%; padding-left: 20px;" onclick="stop()">
+    <div>
+        <img src="/card/mwordth.png">
+    </div>
+    <div style="padding-top: 20px;">
+        <table>
+            <tr>
+                <td>
+                    <input id="1" value="1" type="image" src="/card/th/2/1.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="2" value="2" type="image" src="/card/th/2/2.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="3" value="3" type="image" src="/card/th/2/3.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="4" value="4" type="image" src="/card/th/2/4.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="5" value="5" type="image" src="/card/th/2/5.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="6" value="6" type="image" src="/card/th/2/6.png" onclick="playth(this.id)">
+                </td>
+            </tr>
+        </table>
+        <table style="padding-top: 50px;">
+            <tr>
+                <td>
+                    <input id="7" value="7" type="image" src="/card/th/2/7.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="8" value="8" type="image" src="/card/th/2/8.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="9" value="9" type="image" src="/card/th/2/9.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="10" value="10" type="image" src="/card/th/2/10.png" onclick="playth(this.id)">
+                </td>
+                <td>
+                    <input id="11" value="11" type="image" src="/card/th/2/11.png" onclick="playth(this.id)">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="padding-top: 150px;">
+        <a href="wordth.html"><input class="bf" type="image" src="./desing/return2.png" style="width: 4.5%; padding-right: 20px;"></a>
+            <a href="ccard.html"><input class="bf" type="image" src="card/menu.png" style="width: 4.5%;"></a>
+            <a href="wordth3.html"><input class="bf" type="image" src="./desing/return3.png" style="width: 4.5%; padding-left: 20px;"></a>
+    </div>
+    </div>
+</body>
+<style>
+    body {
+        background-image: url('./card/4.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    table {
+        margin: auto;
+        text-align: center;
+    }
+    td{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .bf {
+        width: auto;
+    }
+
+    input {
+        width: 400px;
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+
+</html>

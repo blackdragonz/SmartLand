@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Land</title>
+    <link rel="icon" href="/desing/icon.png" type="image/x-icon">
+    <audio id="audio" src="./music/07.mp3" autoplay loop></audio>
+    <audio id="picaudio" src=""></audio>
+    <script>
+        const n = 6;
+        var picaudio = document.getElementById("picaudio");
+        const random = [0];
+
+        function start() {
+            locate = [0, 0, 0, 0, 0, 0];
+            var pans1 = document.getElementById("1")
+            var pans2 = document.getElementById("2")
+            var pans3 = document.getElementById("3")
+            var pans4 = document.getElementById("4")
+            var pans5 = document.getElementById("5")
+            var pans6 = document.getElementById("6")
+            var pic = document.getElementById("pic");
+            num = Math.floor(Math.random() * (44 - 1 + 1)) + 1;
+            count = Math.floor(Math.random() * (n - 1 + 1)) + 1;
+            console.log(num)
+            pic.src = "./picture/th/pic/" + num + ".png"
+            random[0] = num;
+            locate[count - 1] = random[0];
+            console.log(random)
+
+            for (let i = 0; i < n; i++) {
+                if (locate[i] == 0) {
+                    ans = Math.floor(Math.random() * (44 - 1 + 1)) + 1;
+                    count1 = 0;
+                    for (let j = 0; j <= n; j++) {
+                        if (locate[j] == ans) {
+                            count1++;
+                        }
+                    }
+                    if (count1 == 0) {
+                        locate[i] = ans;
+                        count1 = 0;
+                        console.log(locate)
+                    } else {
+                        i--;
+                        count1 = 0;
+                    }
+                }
+            }
+            pans1.src = "./picture/th/word/" + [locate[0]] + ".png"
+            pans2.src = "./picture/th/word/" + [locate[1]] + ".png"
+            pans3.src = "./picture/th/word/" + [locate[2]] + ".png"
+            pans4.src = "./picture/th/word/" + [locate[3]] + ".png"
+            pans5.src = "./picture/th/word/" + [locate[4]] + ".png"
+            pans6.src = "./picture/th/word/" + [locate[5]] + ".png"
+        }
+
+        function check(index) {
+            console.log(locate[index - 1])
+            console.log(random)
+            if (locate[index - 1] == random) {
+                picaudio.src = "./picture/th/sound/correct.mp3"
+                console.log(locate);
+            } else {
+                picaudio.src = "./picture/th/sound/missing.mp3"
+            }
+            picaudio.play();
+        }
+
+        function playpic() {
+            picaudio.src = "./picture/th/sound/" + num + ".mp3"
+            picaudio.play();
+        }
+
+        setTimeout(function () {
+            document.getElementById("audio2").play();
+        }, 2000)
+
+        var audio = document.getElementById("audio");
+        audio.volume = 0.008;
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function stop() {
+            var audio = document.getElementById("audio");
+            audio.pause();
+        }
+    </script>
+</head>
+
+<body onload="start()">
+    <audio autoplay src="./picture/p1.mp3"></audio>
+    <audio id="audio2" src="./picture/p2.mp3"></audio>
+    <div class="content" style="text-align: right; padding-top: 10px; padding-right: 50px;">
+        <a href="index.html"><input type="image" src="./desing/home.png" style="width: 2.5%; padding-left: 20px;"></a>
+        <input type="image" src="./desing/speak.png" style="width: 2.5%; padding-left: 20px;" onclick="play()">
+        <input type="image" src="./desing/stop.png" style="width: 2.5%; padding-left: 20px;" onclick="stop()">
+    </div>
+    <div>
+        <img src="/picture/descript.png">
+    </div>
+    <div style="padding-top: 50px;">
+        <input class="winput" id="pic" type="image" src="" onclick="playpic()">
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <input class="winput" id="1" value="1" type="image" src="" onclick="check(this.value)">
+                </td>
+                <td>
+                    <input class="winput" id="2" value="2" type="image" src="" onclick="check(this.value)">
+                </td>
+                <td>
+                    <input class="winput" id="3" value="3" type="image" src="" onclick="check(this.value)">
+                </td>
+                <td>
+                    <input class="winput" id="4" value="4" type="image" src="" onclick="check(this.value)">
+                </td>
+                <td>
+                    <input class="winput" id="5" value="5" type="image" src="" onclick="check(this.value)">
+                </td>
+                <td>
+                    <input class="winput" id="6" value="6" type="image" src="" onclick="check(this.value)">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="padding-top: 40px;">
+        <input type="image" src="./picture/next.png" onclick="start()">
+    </div>
+    <div style="padding-top: 40px;">
+        <a href="cpicture.html"><input type="image" src="./desing/return2.png"
+            style="width: 4.5%;"></a>
+    </div>
+    </div>
+</body>
+<style>
+    body {
+        background-image: url('./picture/picture.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    table {
+        margin: auto;
+        width: 100%;
+        padding-top: 40px;
+    }
+
+    .bf {
+        width: auto;
+    }
+
+    .winput {
+        width: 500px;
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+
+</html>

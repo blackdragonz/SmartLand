@@ -1,0 +1,55 @@
+npm init vue@latest
+
+cd tab
+
+code .
+
+#Settings.json
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
+    "files.eol": "\n",
+    "editor.quickSuggestions": {
+        "strings": true,
+    }
+}
+
+npm install
+npm run lint
+npm run dev
+
+npm install vuetify@^3.0.5
+
+#main.ts
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import App from "./App.vue";
+import router from "./router";
+// Vuetify
+import "vuetify/styles";
+import { createVuetify } from "vuetify";
+import * as components from "vuetify/components";
+import * as directives from "vuetify/directives";
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
+const vuetify = createVuetify({
+  components,
+  directives,
+  icons: {
+    defaultSet: "mdi",
+    aliases,
+    sets: {
+      mdi,
+    },
+  },
+});
+const app = createApp(App);
+app.use(createPinia());
+app.use(router);
+app.use(vuetify);
+app.mount("#app");
+
+npm install @mdi/js -D

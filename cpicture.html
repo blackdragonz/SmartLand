@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Land</title>
+    <link rel="icon" href="/desing/icon.png" type="image/x-icon">
+    <audio id="audio" src="./music/06.mp3" autoplay loop></audio>
+    <script>
+        var audio = document.getElementById("audio");
+        audio.volume = 0.02;
+        function play() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+        function stop() {
+            var audio = document.getElementById("audio");
+            audio.pause();
+        }
+    </script>
+</head>
+
+
+<body>
+    <audio autoplay src="./picture/main.mp3"></audio>
+    <div class="content" style="text-align: right; padding-top: 10px; padding-right: 50px;">
+        <a href="select.html"><input type="image" src="./desing/return.png" style="width: 2.5%; "></a>
+        <a href="index.html"><input type="image" src="./desing/home.png" style="width: 2.5%; padding-left: 20px;"></a>
+        <input type="image" src="./desing/speak.png" style="width: 2.5%; padding-left: 20px;" onclick="play()">
+        <input type="image" src="./desing/stop.png" style="width: 2.5%; padding-left: 20px;" onclick="stop()">
+    </div>
+    <div>
+        <img src="/picture/picture.png">
+    </div>
+    <div style="padding-top: 150px;">
+        <div>
+            <a href="lv1pic.html"><input type="image" src="./picture/easy.png"></a>
+        </div>
+        <div style="padding-top: 150px;"> 
+            <a href="lv2pic.html"><input type="image" src="./picture/normal.png"></a>
+        </div>
+        <div style="padding-top: 150px;">
+            <a href="lv3pic.html"><input type="image" src="./picture/hard.png"></a>
+        </div>
+        <div>
+            <a href="select.html"><input type="image" src="./desing/return2.png"
+            style="width: 4.5%; padding-top: 60px;"></a>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        background-image: url('./picture/pic.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    div {
+        text-align: center;
+    }
+</style>
+
+</html>
